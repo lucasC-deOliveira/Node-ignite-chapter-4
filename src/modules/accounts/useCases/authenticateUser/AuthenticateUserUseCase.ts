@@ -2,7 +2,8 @@ import { inject, injectable } from "tsyringe"
 import { IUserRepository } from "../../repositories/IUsersRepository"
 import {compare} from "bcryptjs"
 import { sign } from "jsonwebtoken"
-import { AppError } from "../../../../errors/AppError"
+import { AppError } from "@erros/AppError"
+
 
 interface IRequest {
     email: string,

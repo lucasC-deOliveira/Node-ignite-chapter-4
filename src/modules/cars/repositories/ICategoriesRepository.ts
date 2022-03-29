@@ -1,5 +1,6 @@
 import { Category } from "../entities/Category";
 
+
 //  DTO => data transfer object = criar objeto para transerencia de dados entre uma classe e outra
 interface ICreateCategoryDTO{
     name:string;
