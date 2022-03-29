@@ -1,4 +1,4 @@
-import { Category } from "../entities/Category";
+import { Category } from "../infra/typeorm/entities/Category";
 
 
 //  DTO => data transfer object = criar objeto para transerencia de dados entre uma classe e outra
