@@ -1,7 +1,8 @@
+import { inject, injectable } from "tsyringe"
 import { Car } from "@modules/cars/infra/typeorm/entities/Car";
 import { ICarsRepository } from "@modules/cars/repositories/ICarsRepository";
 import { AppError } from "@shared/errors/AppError";
-//import { inject, injectable } from "tsyringe"
+
 
 
 interface IRequest {
@@ -15,12 +16,12 @@ interface IRequest {
 }
 
 
-//injectable()
+injectable()
 class CreateCarUseCase {
 
 
     constructor(
-        //@inject("CarsRepository")
+        @inject("CarsRepository")
         private carsRepository : ICarsRepository
     ){}
 
@@ -36,6 +37,8 @@ class CreateCarUseCase {
 
         const carAlreadyExist = await this.carsRepository.findByLicencePlate(licence_plate);
 
+        console.log("chegou aqui")
+
         if(carAlreadyExist){
             throw new AppError("Car Already Exists")
         }
@@ -49,6 +52,8 @@ class CreateCarUseCase {
             brand,
             category_id
         });
+
+        console.log("chegou aqui2")
 
         return car;
     }
