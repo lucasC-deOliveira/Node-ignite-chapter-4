@@ -16,7 +16,7 @@ interface IRequest {
 }
 
 
-injectable()
+@injectable()
 class CreateCarUseCase {
 
 
