@@ -37,7 +37,7 @@ class CreateCarUseCase {
 
         const carAlreadyExist = await this.carsRepository.findByLicencePlate(licence_plate);
 
-        console.log("chegou aqui")
+       
 
         if(carAlreadyExist){
             throw new AppError("Car Already Exists")
@@ -53,7 +53,7 @@ class CreateCarUseCase {
             category_id
         });
 
-        console.log("chegou aqui2")
+        
 
         return car;
     }
