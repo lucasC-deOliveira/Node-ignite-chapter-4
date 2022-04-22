@@ -11,6 +11,7 @@ class CarsRepository implements ICarsRepository {
     constructor() {
         this.repository = getRepository(Car);
     }
+  
     
 
     async create({
@@ -20,7 +21,9 @@ class CarsRepository implements ICarsRepository {
         description,
         fine_amount,
         licence_plate,
-        name
+        name,
+        specifications,
+        id
     }: ICreateCarDTO): Promise<Car> {
         const car = this.repository.create({
             brand,
@@ -29,7 +32,9 @@ class CarsRepository implements ICarsRepository {
             description,
             fine_amount,
             licence_plate,
-            name
+            name,
+            specifications,
+            id
         })
 
         await this.repository.save(car)
@@ -61,7 +66,10 @@ class CarsRepository implements ICarsRepository {
 
        return cars
     }
-
+    async findById(id: string): Promise<Car> {
+      const car = await this.repository.findOne(id);
+      return car;
+    }
 
 }
 
