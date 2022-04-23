@@ -48,8 +48,6 @@ describe("Create Car Specification", ()=>{
                 name:"test"
             })
 
-            console.log("especification", specification)
-
         
         const specifications_id = [specification.id];
 
