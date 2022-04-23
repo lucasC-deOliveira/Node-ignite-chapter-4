@@ -16,6 +16,7 @@ import { AppError } from "@shared/errors/AppError";
 
 
 createConnection()
+
 const app = express();
 
 app.use(express.json())
@@ -41,7 +42,7 @@ app.use(
     });
 })
 
-
+console.log("passou aqui")
 
 
 export {app}
